@@ -19,15 +19,6 @@ export default function PerformanceStats() {
     const inputRef = useRef(null);
     const timerRef = useRef(null);
 
-    useEffect(() => {
-        if (started && !done && timeLeft > 0) {
-            timerRef.current = setInterval(() => setTimeLeft(p => p - 1), 1000);
-        } else if (timeLeft === 0 && started && !done) {
-            finishTest(typed);
-        }
-        return () => clearInterval(timerRef.current);
-    }, [started, timeLeft, done, finishTest, typed]);
-
     const finishTest = useCallback((finalTyped) => {
         clearInterval(timerRef.current);
         setDone(true);
@@ -43,6 +34,15 @@ export default function PerformanceStats() {
         setWpm(calcWpm);
         setAcc(calcAcc);
     }, [text, timeLeft]);
+
+    useEffect(() => {
+        if (started && !done && timeLeft > 0) {
+            timerRef.current = setInterval(() => setTimeLeft(p => p - 1), 1000);
+        } else if (timeLeft === 0 && started && !done) {
+            finishTest(typed);
+        }
+        return () => clearInterval(timerRef.current);
+    }, [started, timeLeft, done, finishTest, typed]);
 
     const handleChange = (e) => {
         if (done) return;
