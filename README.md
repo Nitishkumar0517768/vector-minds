@@ -1,8 +1,3 @@
-# React + Vite
+# Freelance Marketplace Currency Arbitration Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A cutting-edge fintech platform providing real-time global currency arbitration mapping, interactive analytics, typing speed performance tracking, and predicting trends using live API inputs. Built by Vector Minds.
